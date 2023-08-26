@@ -1,0 +1,59 @@
+﻿<Window x:Class="Statki2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Statki2"
+        mc:Ignorable="d"
+        Title="Statki 2.0" Height="800" Width="1200"
+        ResizeMode="NoResize"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="120" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+
+        <Menu>
+            <MenuItem Header="Gra">
+                <MenuItem Header="Zrestartuj" Click="Handle_MenuClick_RestartGame"/>
+            </MenuItem>
+            <MenuItem Header="O grze">
+                <MenuItem Header="Informacje" Click="Handle_MenuClick_AboutWindow"/>
+                <MenuItem Header="Instrukcja gry" Click="Handle_MenuClick_GameInstructions"/>
+            </MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1" Name="Header" Background="LightGray">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        
+        <Grid Grid.Row="2" Name="Boards">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Name="PlayerGrid" />
+                <Grid Grid.Column="1" Name="Separator" Background="Black" />
+                <Grid Grid.Column="2" Name="ComputerGrid" />
+            </Grid>
+        </Grid>
+            
+        <Grid Grid.Row="3" Name="Footer" Background="LightGray">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        
+    </Grid>
+</Window>
